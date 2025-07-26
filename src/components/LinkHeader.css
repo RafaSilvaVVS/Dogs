@@ -1,0 +1,10 @@
+.link-Header{
+  color: #333;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.link-Header::after{
+  content: url(../assets/usuario.svg);
+}

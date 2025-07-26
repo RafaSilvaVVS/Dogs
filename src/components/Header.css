@@ -1,0 +1,6 @@
+.lista-Header{
+  display: flex;
+  padding:  24px;
+  flex: 1;
+  justify-content: space-between;
+}
