@@ -3,16 +3,21 @@ import Header from './components/Header';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Home from './Features/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="div-App">
-      <div>
-        <Header />
+    <BrowserRouter>
+      <div className="div-App">
+        <div>
+          <Header />
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
       </div>
-      <Home />
-      <Footer />
-    </div>
+    </BrowserRouter>
   );
 };
 
