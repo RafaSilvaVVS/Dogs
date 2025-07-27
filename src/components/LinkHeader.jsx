@@ -3,7 +3,7 @@ import './LinkHeader.css';
 
 const LinkHeader = () => {
   return (
-    <a class="link-Header" href="">
+    <a className="link-Header" href="">
       Login / criar
     </a>
   );

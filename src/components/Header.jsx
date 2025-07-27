@@ -5,8 +5,8 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <header className="container-header">
-      <nav>
+    <header>
+      <nav className="container-header">
         <ul className="lista-Header">
           <li>
             <LogoHeader />

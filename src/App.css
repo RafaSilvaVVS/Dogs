@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+img{
+  max-width: 100%;
+  display: block;
+}
+
 .div-App{
   display: flex;
   flex-direction: column;

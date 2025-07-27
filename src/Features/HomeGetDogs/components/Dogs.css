@@ -1,0 +1,45 @@
+.acessos{
+  position: absolute;
+  display: none;
+  place-self: center;
+  color: #fff;
+}
+
+.acessos::before{
+  content: url('../../../assets/visualizacao.svg');
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.liPost div {
+  display: grid;
+}
+
+.liPost:hover{
+  cursor: pointer;
+}
+
+.liPost div img{
+  border-radius: 8px;
+}
+
+.liPost{
+  display: grid;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.liPost:hover div::before{content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  position: absolute;
+  border-radius: 8px;
+  height: 100%;
+  display: grid;
+}
+
+
+.liPost:hover .acessos{
+  display: block;
+}
