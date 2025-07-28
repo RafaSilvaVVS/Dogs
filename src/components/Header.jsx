@@ -1,6 +1,7 @@
 import React from 'react';
 import LogoHeader from './LogoHeader';
 import LinkHeader from './linkHeader';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -12,7 +13,9 @@ const Header = () => {
             <LogoHeader />
           </li>
           <li>
-            <LinkHeader />
+            <Link to="login">
+              <LinkHeader />
+            </Link>
           </li>
         </ul>
       </nav>

@@ -1,0 +1,13 @@
+.perdeu-senha{
+  color: #666;
+  font-size: 18px;
+  width: fit-content;
+}
+
+.perdeu-senha::after{
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #666;
+  display: block;
+}
