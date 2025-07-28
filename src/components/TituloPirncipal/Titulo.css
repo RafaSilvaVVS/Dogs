@@ -1,0 +1,18 @@
+.titulo{
+  font-size: 3rem;
+  color: #333;
+  position: relative;
+}
+
+.titulo::before{
+  content: '';
+  background-color: #fb1;
+  width: 25px;
+  height: 25px;
+  display: block;
+  border-radius: 3px;
+  z-index: -1;
+  left: -5px;
+  position: absolute;
+  bottom: 0;
+}

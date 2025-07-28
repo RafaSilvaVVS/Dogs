@@ -1,0 +1,10 @@
+.btnEntrar{
+  padding: 12px 32px;
+  background-color: #fb1;
+  border: none;
+  color: #333;
+  margin-top: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 17px;
+}

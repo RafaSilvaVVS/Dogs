@@ -3,6 +3,7 @@ import Header from './components/Header';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Home from './Features/Home';
+import Login from './Features/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
       </div>

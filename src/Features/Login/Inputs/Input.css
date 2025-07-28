@@ -1,0 +1,16 @@
+.input-login{
+  margin: 12px 0px ;
+  display: block;
+  background-color: #ddd;
+  padding: 15px 22px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+}
+
+
+.label{
+  margin-top: 10px;
+  width: fit-content;
+  display: block;
+}
