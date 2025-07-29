@@ -5,6 +5,7 @@ import Titulo from '../../components/TituloPirncipal/Titulo';
 import Input from './Inputs/Input';
 import Entrar from './Btn/Entrar';
 import LinkSenha from './LinkSenha/LinkSenha';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -21,7 +22,9 @@ const Login = () => {
         <div className="cadastro">
           <h2>Cadastre-se</h2>
           <p>Ainda não possui conta? Cadastre-se no site.</p>
-          <Entrar texto="Cadastro" />
+          <Link to="criar">
+            <Entrar texto="Cadastro" />
+          </Link>
         </div>
       </div>
     </main>
