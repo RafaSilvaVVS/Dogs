@@ -2,9 +2,13 @@
   padding: 12px 32px;
   background-color: #fb1;
   border: none;
-  color: #333;
+  color: #764701;
   margin-top: 20px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 17px;
+}
+
+.btnEntrar:hover{
+  box-shadow: 0px 0px 0px 3px #fea , 0px 0px 0px 5px #fb1;
 }

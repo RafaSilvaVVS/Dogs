@@ -1,0 +1,15 @@
+.container-criar{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.formulario-criar{
+  padding-left: 30px;
+  max-width: 500px;
+  margin: 40px 0px;
+}
+
+.formulario-criar h1{
+  margin-bottom: 30px;
+}
