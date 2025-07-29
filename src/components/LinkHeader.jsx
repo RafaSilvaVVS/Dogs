@@ -2,11 +2,7 @@ import React from 'react';
 import './LinkHeader.css';
 
 const LinkHeader = () => {
-  return (
-    <a className="link-Header" href="">
-      Login / criar
-    </a>
-  );
+  return <p className="link-Header">Login / criar</p>;
 };
 
 export default LinkHeader;
