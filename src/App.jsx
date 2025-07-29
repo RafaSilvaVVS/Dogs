@@ -6,6 +6,8 @@ import Home from './Features/Home';
 import Login from './Features/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Criar from './Features/Login/CriarConta/Criar';
+import HomeConta from './Features/Conta/Home';
+import Estatisticas from './Features/Conta/EstatisticasPage/Estatisticas';
 
 const App = () => {
   return (
@@ -18,6 +20,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/login/criar" element={<Criar />} />
+          <Route path="conta/*" element={<HomeConta />} />
         </Routes>
         <Footer />
       </div>
