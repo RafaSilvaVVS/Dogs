@@ -1,7 +1,8 @@
 import React from 'react';
+import Titulo from '../../../components/TituloPirncipal/Titulo';
 
 const Postar = () => {
-  return <div>Postagens</div>;
+  return <Titulo texto="Postar" />;
 };
 
 export default Postar;

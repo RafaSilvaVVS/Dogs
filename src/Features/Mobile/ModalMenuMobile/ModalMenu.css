@@ -1,0 +1,39 @@
+.ul-menu-modal{
+  position: absolute;
+  left: -120px;
+  background-color: #fff;
+  box-shadow: 1px 2px 4px 2px #ddd;
+  bottom: -170px;
+  padding-left: 10px;
+  border-radius: 4px;
+  width: 170px;
+}
+
+.ul-menu-modal  li a{
+  color: #333;
+}
+
+
+.ul-menu-modal  li a::after{
+  content: '';
+  width: 120px;
+  height: 2px;
+  bottom: 0px;
+  background-color: #ddd;
+  display: block;
+  position: absolute;
+}
+
+.ul-menu-modal li .active{
+  box-shadow: initial;
+  color: #fb1;
+}
+
+.ul-menu-modal  li a{
+  display:flex ;
+  position: relative;
+  align-items: center;
+  gap: 4px;
+  padding:  12px 8px;
+  background-color: initial;
+}
