@@ -5,6 +5,7 @@ import Feed from '../../../assets/feed.svg';
 import Estatisticas from '../../../assets/estatisticas.svg';
 import Adicionar from '../../../assets/adicionar.svg';
 import { NavLink } from 'react-router-dom';
+import Logout from '../../../assets/sair.svg';
 
 const ModalMenu = () => {
   return (
@@ -26,6 +27,10 @@ const ModalMenu = () => {
           <Menu src={Adicionar} title="Icone feed" />
           <span>Postagens</span>
         </NavLink>
+      </li>
+      <li className="logout-mobile">
+        <Menu src={Logout} title="Icone sair" />
+        <span>Sair</span>
       </li>
     </ul>
   );

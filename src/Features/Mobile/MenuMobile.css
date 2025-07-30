@@ -2,12 +2,23 @@
   content: '';
   background-color: #333;
   width: 30px;
-  height: 2px;
+  height: 3px;
   display: block;
   box-shadow: 0px -7px 0px 0px #333,0px 7px 0px 0px #333;
 }
 
-.div-menu-mobile{
+
+.ativo::before{
+  animation: Mobile 2s forwards;
+  box-shadow: -12px 0px 0px 0px #333,12px 0px 0px 0px #333;
+  content: '';
+  gap: 5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 200px !important;
+}
+
+.ativo{
   cursor: pointer;
   box-shadow:  0px 0px 3px #fea, 0px 0px 6px 3px #fb1;
 } 
@@ -17,7 +28,9 @@
   align-items: center;
   justify-content: center;
   background-color: #ddd;
- padding: 24px 10px;
+  width: 50px;
+  height: 50px;
+  padding: 8px;
  position: relative;
   border-radius: 8px;
 }
