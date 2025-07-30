@@ -1,9 +1,10 @@
 import React from 'react';
+import Titulo from '../../../components/TituloPirncipal/Titulo';
 
 const Postagens = () => {
   return (
     <div>
-      <h1>Post</h1>
+      <Titulo texto="Feed" />
     </div>
   );
 };
