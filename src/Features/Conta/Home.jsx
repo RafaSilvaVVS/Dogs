@@ -9,6 +9,7 @@ import Feed from '../../assets/feed.svg';
 import EstatisticaImg from '../../assets/estatisticas.svg';
 import Adicionar from '../../assets/adicionar.svg';
 import MenuMobile from '../Mobile/MenuMobile';
+import Logout from '../../assets/sair.svg';
 
 const Home = () => {
   const activeStyle = {
@@ -26,15 +27,24 @@ const Home = () => {
           <MenuMobile />
           <ul className="ul-lista-nav">
             <nav>
-              <NavLink end to="/conta" activeStyle={activeStyle}>
-                <Menu src={Feed} title="Feed icone" />
-              </NavLink>
-              <NavLink end to="/conta/estatisticas">
-                <Menu src={EstatisticaImg} title="Icone estatisticas" />
-              </NavLink>
-              <NavLink end to="/conta/postar">
-                <Menu src={Adicionar} title="Icone enviar" />
-              </NavLink>
+              <li>
+                <NavLink end to="/conta" activeStyle={activeStyle}>
+                  <Menu src={Feed} title="Feed icone" />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink end to="/conta/estatisticas">
+                  <Menu src={EstatisticaImg} title="Icone estatisticas" />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink end to="/conta/postar">
+                  <Menu src={Adicionar} title="Icone enviar" />
+                </NavLink>
+              </li>
+              <li className="logout">
+                <Menu src={Logout} title="Icone sair" />
+              </li>
             </nav>
           </ul>
         </div>

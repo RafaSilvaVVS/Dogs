@@ -3,7 +3,7 @@
   left: -120px;
   background-color: #fff;
   box-shadow: 1px 2px 4px 2px #ddd;
-  bottom: -170px;
+  bottom: -220px;
   padding-left: 10px;
   border-radius: 4px;
   width: 170px;
@@ -29,11 +29,21 @@
   color: #fb1;
 }
 
+
 .ul-menu-modal  li a{
   display:flex ;
   position: relative;
   align-items: center;
   gap: 4px;
+  padding:  12px 8px;
+  background-color: initial;
+}
+.logout-mobile{
+  display:flex ;
+  position: relative;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
   padding:  12px 8px;
   background-color: initial;
 }
