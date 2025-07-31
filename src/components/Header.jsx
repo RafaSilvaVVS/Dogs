@@ -15,9 +15,15 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="login">
-              <LinkHeader />
-            </Link>
+            {window.localStorage.getItem('token') ? (
+              <Link to="/conta/">
+                <LinkHeader />
+              </Link>
+            ) : (
+              <Link to="login">
+                <LinkHeader />
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
