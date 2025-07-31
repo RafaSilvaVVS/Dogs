@@ -6,6 +6,9 @@ import Titulo from '../../../components/TituloPirncipal/Titulo';
 import Button from '../Btn/Entrar';
 
 const Criar = () => {
+  React.useEffect(() => {
+    document.title = 'Dogs | Criar';
+  }, []);
   return (
     <main className="container-criar">
       <Bg />
