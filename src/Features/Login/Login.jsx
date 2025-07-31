@@ -8,6 +8,9 @@ import LinkSenha from './LinkSenha/LinkSenha';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+  React.useEffect(() => {
+    document.title = 'Dogs | Login';
+  }, []);
   return (
     <main className="container-login">
       <Bg />

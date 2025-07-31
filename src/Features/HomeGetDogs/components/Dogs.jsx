@@ -3,8 +3,6 @@ import './Dogs.css';
 import Imgs from './Imgs';
 
 const Dogs = ({ data }) => {
-  console.log(data);
-
   if (data) {
     return (
       <>
