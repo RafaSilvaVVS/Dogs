@@ -12,13 +12,10 @@ import MenuMobile from '../Mobile/MenuMobile';
 import Logout from '../../assets/sair.svg';
 
 const Home = () => {
-  const activeStyle = {
-    color: 'red',
-  };
   return (
     <main>
       <div className="container-conta">
-        <div class="link-nav">
+        <div className="link-nav">
           <Routes>
             <Route index element={<Postagens />} />
             <Route path="estatisticas" element={<Estatisticas />} />
@@ -28,7 +25,7 @@ const Home = () => {
           <ul className="ul-lista-nav">
             <nav>
               <li>
-                <NavLink end to="/conta" activeStyle={activeStyle}>
+                <NavLink end to="/conta/">
                   <Menu src={Feed} title="Feed icone" />
                 </NavLink>
               </li>
