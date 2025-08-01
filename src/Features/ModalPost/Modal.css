@@ -12,8 +12,9 @@
 
 .modal-item{
   display: grid;
-  place-self: start center;
+  place-self:  center;
   max-width: 700px;
+  margin-top: -100px;
   grid-template-columns: auto auto;
 }
 
@@ -91,7 +92,7 @@
   display: inline-block;
 }
 
-.comentarios{
+.container-conteudo{
   height: fit-content;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -100,6 +101,11 @@
   display: block;
   overflow-y: auto;
 }
+
+.conteudo-foto-modal{
+  padding: 22px;
+}
+
 .comentarios p{
   font-weight: bold;
 }
@@ -109,11 +115,8 @@
   font-weight: initial;
 }
 
-.container-conteudo{
-  display: flex;
-  flex-direction: column;
-  height: calc(100% - 150px);
-  justify-content: space-between;
+.comentarios p{
+  margin: 8px 0px;
 }
 
 .enviar-comentario{
@@ -125,4 +128,9 @@
 
 .enviar-comentario img{
   cursor: pointer;
+}
+
+form .btn-comentario{
+  background-color: transparent;
+  border: none;
 }
