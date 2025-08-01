@@ -4,19 +4,27 @@ import Titulo from '../../components/TituloPirncipal/Titulo';
 import './Modal.css';
 import Input from './InputComentario/Input';
 import { NavLink } from 'react-router-dom';
+import Comentar from './Comentar';
 
 const Modal = ({ id, setModal }) => {
   const { data, loading, error, request } = useFetch();
+  const [comentario, setComentar] = React.useState(false);
+
   const modal = React.useRef('');
   React.useEffect(() => {
     request(`/api/photo/${id}`);
-  }, [id, request]);
+    setComentar(false);
+  }, [id, request, comentario]);
 
   function fecharModal(e) {
-    if (!modal.current.contains(e.target)) setModal(false);
+    if (modal) {
+      if (!modal.current.contains(e.target)) {
+        setModal(false);
+      }
+    }
   }
 
-  if (data)
+  if (data && data.photo)
     return (
       <div onClick={fecharModal} className="container-modal">
         <div ref={modal} className="modal-item">
@@ -36,19 +44,16 @@ const Modal = ({ id, setModal }) => {
               <p>{data.photo.idade} anos</p>
             </div>
             <div className="container-conteudo">
-              {data.comments.map((comentario) => (
-                <div key={comentario.comment_author} className="comentarios">
+              {data.comments.map((comentario, index) => (
+                <div key={index} className="comentarios">
                   <p>
                     {comentario.comment_author}:{' '}
                     <span>{comentario.comment_content}</span>
                   </p>
                 </div>
               ))}
-              <div className="enviar-comentario">
-                <Input />
-                <img src="../../../src/assets/enviar.svg" alt="icone enviar" />
-              </div>
             </div>
+            <Comentar id={id} setComentar={setComentar} />
           </div>
         </div>
       </div>
