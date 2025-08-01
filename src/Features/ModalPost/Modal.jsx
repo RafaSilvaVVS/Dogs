@@ -3,6 +3,7 @@ import useFetch from '../../hooks/useFetch';
 import Titulo from '../../components/TituloPirncipal/Titulo';
 import './Modal.css';
 import Input from './InputComentario/Input';
+import { NavLink } from 'react-router-dom';
 
 const Modal = ({ id, setModal }) => {
   const { data, loading, error, request } = useFetch();
@@ -24,7 +25,9 @@ const Modal = ({ id, setModal }) => {
           </div>
           <div className="conteudo-foto-modal">
             <div className="header-modal">
-              <p className="autor">@{data.photo.author}</p>
+              <NavLink to={`/conta/${data.photo.author}`}>
+                <p className="autor">@{data.photo.author}</p>
+              </NavLink>
               <p className="photo-modal-acessos">{data.photo.acessos}</p>
             </div>
             <Titulo texto={data.photo.title} />
@@ -34,7 +37,7 @@ const Modal = ({ id, setModal }) => {
             </div>
             <div className="container-conteudo">
               {data.comments.map((comentario) => (
-                <div className="comentarios">
+                <div key={comentario.comment_author} className="comentarios">
                   <p>
                     {comentario.comment_author}:{' '}
                     <span>{comentario.comment_content}</span>
