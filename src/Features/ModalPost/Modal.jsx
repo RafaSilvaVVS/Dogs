@@ -38,7 +38,9 @@ const Modal = ({ id, setModal }) => {
               </NavLink>
               <p className="photo-modal-acessos">{data.photo.acessos}</p>
             </div>
-            <Titulo texto={data.photo.title} />
+            <NavLink to={`/foto/${data.photo.id}`}>
+              <Titulo texto={data.photo.title} />
+            </NavLink>
             <div className="infos-dog">
               <p>{data.photo.peso} Kg</p>
               <p>{data.photo.idade} anos</p>
@@ -53,7 +55,9 @@ const Modal = ({ id, setModal }) => {
                 </div>
               ))}
             </div>
-            <Comentar id={id} setComentar={setComentar} />
+            {window.localStorage.getItem('token') && (
+              <Comentar id={id} setComentar={setComentar} />
+            )}
           </div>
         </div>
       </div>

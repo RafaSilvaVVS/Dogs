@@ -12,6 +12,10 @@ const Autor = () => {
   const { autor } = useParams();
 
   React.useEffect(() => {
+    document.title = `Dogs | ${autor}`;
+  }, [data, autor]);
+
+  React.useEffect(() => {
     request(`/api/photo/?_total=9&_page=1&_user=cat`);
   }, [autor, request]);
 
