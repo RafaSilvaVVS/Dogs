@@ -9,6 +9,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 
 const Login = () => {
+  const navigate = useNavigate();
+  const localPath = window.location.pathname;
+
+  React.useEffect(() => {
+    if (window.localStorage.getItem('token') && localPath.includes('/login')) {
+      navigate('/conta/');
+    }
+  }, [localPath, navigate]);
   const { data, loading, error, request } = useFetch();
   const [erroMessage, setErroMessage] = React.useState('');
   const [username, setUsername] = React.useState('');
@@ -16,8 +24,6 @@ const Login = () => {
   React.useEffect(() => {
     document.title = 'Dogs | Login';
   }, []);
-
-  const navigate = useNavigate();
 
   function fetchLogin(e) {
     e.preventDefault();
@@ -37,7 +43,6 @@ const Login = () => {
   }, [error]);
   React.useEffect(() => {
     if (data && data.token) {
-      console.log(data);
       window.localStorage.setItem('token', data.token);
       navigate('/conta/');
     }

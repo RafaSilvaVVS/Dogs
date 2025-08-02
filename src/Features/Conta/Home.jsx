@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes, useNavigate } from 'react-router-dom';
 import './Home.css';
 import Postagens from './PostsPage/Postagens';
 import Estatisticas from './EstatisticasPage/Estatisticas';
@@ -12,6 +12,13 @@ import MenuMobile from '../Mobile/MenuMobile';
 import Logout from '../../assets/sair.svg';
 
 const Home = () => {
+  const localPath = window.location.pathname;
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    if (!window.localStorage.getItem('token') && localPath.includes('/conta')) {
+      navigate('/');
+    }
+  }, [localPath, navigate]);
   return (
     <main>
       <div className="container-conta">

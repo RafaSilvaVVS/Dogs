@@ -1,16 +1,19 @@
-.div-menu-mobile::before{
+.div-menu-mobile::before {
   content: '';
   background-color: #333;
   width: 30px;
   height: 3px;
   display: block;
-  box-shadow: 0px -7px 0px 0px #333,0px 7px 0px 0px #333;
+  box-shadow: 0px -7px 0px 0px #333, 0px 7px 0px 0px #333;
 }
 
+.div-menu-mobile {
+  cursor: pointer;
+}
 
-.ativo::before{
+.ativo::before {
   animation: Mobile 2s forwards;
-  box-shadow: -12px 0px 0px 0px #333,12px 0px 0px 0px #333;
+  box-shadow: -12px 0px 0px 0px #333, 12px 0px 0px 0px #333;
   content: '';
   gap: 5px;
   width: 4px;
@@ -18,12 +21,12 @@
   border-radius: 200px !important;
 }
 
-.ativo{
+.ativo {
   cursor: pointer;
-  box-shadow:  0px 0px 3px #fea, 0px 0px 6px 3px #fb1;
-} 
+  box-shadow: 0px 0px 3px #fea, 0px 0px 6px 3px #fb1;
+}
 
-.div-menu-mobile{
+.div-menu-mobile {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,17 +34,17 @@
   width: 50px;
   height: 50px;
   padding: 8px;
- position: relative;
+  position: relative;
   border-radius: 8px;
 }
 
-.container-mobile{
+.container-mobile {
   display: none;
   position: relative;
 }
 
-@media(max-width:600px){
-  .container-mobile{
+@media (max-width: 600px) {
+  .container-mobile {
     display: block;
   }
 }
