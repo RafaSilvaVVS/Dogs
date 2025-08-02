@@ -33,7 +33,7 @@ const Modal = ({ id, setModal }) => {
           </div>
           <div className="conteudo-foto-modal">
             <div className="header-modal">
-              <NavLink to={`/conta/${data.photo.author}`}>
+              <NavLink to={`/perfil/${data.photo.author}`}>
                 <p className="autor">@{data.photo.author}</p>
               </NavLink>
               <p className="photo-modal-acessos">{data.photo.acessos}</p>

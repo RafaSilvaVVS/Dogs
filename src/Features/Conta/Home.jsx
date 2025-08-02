@@ -24,7 +24,7 @@ const Home = () => {
       <div className="container-conta">
         <div className="link-nav">
           <Routes>
-            <Route index element={<Postagens />} />
+            <Route path="" element={<Postagens />} />
             <Route path="estatisticas" element={<Estatisticas />} />
             <Route path="postar" element={<Postar />} />
           </Routes>

@@ -7,7 +7,6 @@ import Login from './Features/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Criar from './Features/Login/CriarConta/Criar';
 import HomeConta from './Features/Conta/Home';
-import Estatisticas from './Features/Conta/EstatisticasPage/Estatisticas';
 import Autor from './Features/AutorPage/Autor';
 import Pagina from './Features/PaginaFoto/Pagina';
 
@@ -23,7 +22,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/login/criar" element={<Criar />} />
           <Route path="conta/*" element={<HomeConta />} />
-          <Route path="conta/:autor" element={<Autor />} />
+          <Route path="perfil/:autor" element={<Autor />} />
           <Route path="foto/:id" element={<Pagina />} />
         </Routes>
         <Footer />

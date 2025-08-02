@@ -1,0 +1,39 @@
+.formulario-publicar{
+  grid-column: 1 / -1;
+  grid-row:  2;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 90px;
+}
+
+.preview img{
+  width: 100%;
+  border-radius: 8px;
+  height: 100%;
+}
+
+
+.formulario-publicar label{
+  margin-bottom: 7px;
+  display: block;
+}
+
+.formulario-publicar input{
+  background-color: #ddd;
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0px;
+  border: none;
+  border-radius: 7px;
+  display: block;
+}
+
+.formulario-publicar input:hover{
+  outline: none;
+  box-shadow: 0px 0px 0px 2px #fea, 0px 0px 0px 4px #fb1;
+}
+
+.formulario-publicar input:focus{
+  outline: none;
+}

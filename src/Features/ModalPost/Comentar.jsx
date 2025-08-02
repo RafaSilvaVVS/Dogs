@@ -9,7 +9,6 @@ const Comentar = ({ id, setComentar }) => {
   const inputRef = React.useRef();
   function comentar(e) {
     e.preventDefault();
-    console.log(id);
     request(`/api/comment/${id}`, {
       method: 'POST',
       headers: {
