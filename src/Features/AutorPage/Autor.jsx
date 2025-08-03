@@ -16,7 +16,7 @@ const Autor = () => {
   }, [data, autor]);
 
   React.useEffect(() => {
-    request(`/api/photo/?_total=9&_page=1&_user=cat`);
+    request(`/api/photo/?_total=9&_page=1&_user=${autor}`);
   }, [autor, request]);
 
   return (

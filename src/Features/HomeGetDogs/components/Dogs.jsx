@@ -6,9 +6,11 @@ import Modal from '../../ModalPost/Modal';
 const Dogs = ({ data }) => {
   const [modal, setModal] = React.useState(false);
   const [id, setId] = React.useState(null);
+
   function modalAbrir() {
     setModal(true);
   }
+
   if (data) {
     return (
       <>
