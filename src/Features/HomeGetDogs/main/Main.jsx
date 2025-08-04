@@ -5,20 +5,25 @@ import Dogs from '../components/Dogs';
 
 const Main = () => {
   const { data, loading, error, request } = useFetch();
-  const [total, setTotal] = React.useState(0);
+  const [total, setTotal] = React.useState(6);
   const listaFoto = React.useRef();
   const [mensagem, setMensagem] = React.useState('');
   const [mutacao, setMutacao] = React.useState(false);
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !loading && total <= data?.length) {
+        if (
+          (mutacao || !mutacao) &&
+          entries[0].isIntersecting &&
+          !loading &&
+          total <= data?.length
+        ) {
           setTotal((ant) => ant + 6);
         }
         if (data && total >= data.length) {
           setMensagem('Não a mais publicações');
         } else {
-          setMensagem('Não a mais publicações');
+          setMensagem('');
         }
       },
       {
@@ -37,7 +42,23 @@ const Main = () => {
         observer.unobserve(listaFoto.current);
       }
     };
-  }, [loading, total, data]);
+  }, [loading, total, data, mutacao]);
+
+  function ativarMutacao() {
+    if (
+      mutacao == false &&
+      listaFoto.current &&
+      listaFoto.current.getBoundingClientRect().top <= 400
+    ) {
+      setMutacao(true);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', ativarMutacao);
+    };
+  }
+
+  if (mutacao == false) window.addEventListener('scroll', ativarMutacao);
 
   React.useEffect(() => {
     request(`/api/photo/?_total=${total}&_page=1&_user=0`);
