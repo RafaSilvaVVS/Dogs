@@ -1,8 +1,8 @@
 import React from 'react';
 import './LinkHeader.css';
 
-const LinkHeader = () => {
-  return <p className="link-Header">Login / criar</p>;
+const LinkHeader = ({ texto }) => {
+  return <p className="link-Header">{texto}</p>;
 };
 
 export default LinkHeader;

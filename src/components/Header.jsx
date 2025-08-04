@@ -3,8 +3,11 @@ import LogoHeader from './LogoHeader';
 import LinkHeader from './linkHeader';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { GlobalContext } from '../hooks/userContext';
 
 const Header = () => {
+  const userContext = React.useContext(GlobalContext);
+
   return (
     <header>
       <nav className="container-header">
@@ -16,12 +19,12 @@ const Header = () => {
           </li>
           <li>
             {window.localStorage.getItem('token') ? (
-              <Link to="/conta/">
-                <LinkHeader />
+              <Link to="login">
+                <LinkHeader texto={userContext} />
               </Link>
             ) : (
-              <Link to="login">
-                <LinkHeader />
+              <Link to="/conta/">
+                <LinkHeader texto="Login / Criar" />
               </Link>
             )}
           </li>
