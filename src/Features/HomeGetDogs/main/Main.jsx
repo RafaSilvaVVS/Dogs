@@ -12,7 +12,7 @@ const Main = () => {
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !loading && total <= data.length) {
+        if (entries[0].isIntersecting && !loading && total <= data?.length) {
           setTotal((ant) => ant + 6);
         }
         if (data && total >= data.length) {
@@ -40,7 +40,6 @@ const Main = () => {
   }, [loading, total, data]);
 
   React.useEffect(() => {
-    console.log(total);
     request(`/api/photo/?_total=${total}&_page=1&_user=0`);
   }, [total, request]);
 

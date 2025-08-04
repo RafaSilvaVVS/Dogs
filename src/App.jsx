@@ -9,13 +9,15 @@ import Criar from './Features/Login/CriarConta/Criar';
 import HomeConta from './Features/Conta/Home';
 import Autor from './Features/AutorPage/Autor';
 import Pagina from './Features/PaginaFoto/Pagina';
-
+import { GlobalStorage } from './hooks/userContext';
 const App = () => {
   return (
     <BrowserRouter>
       <div className="div-App">
         <div>
-          <Header />
+          <GlobalStorage>
+            <Header />
+          </GlobalStorage>
         </div>
         <Routes>
           <Route path="/" element={<Home />} />

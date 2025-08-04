@@ -10,8 +10,6 @@ const Formulario = () => {
   const [errorMeessage, setErrorMessage] = React.useState('');
   const [img, setImg] = React.useState('');
   const { data, loading, error, request } = useFetch();
-
-  console.log(data);
   function fetchPost(e) {
     e.preventDefault();
     const formData = new FormData();
