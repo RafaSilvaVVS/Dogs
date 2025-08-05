@@ -1,0 +1,17 @@
+.container-carregando{
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: grid;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  z-index: 100;
+}
+
+.carregando-item{
+  place-self: center;
+  background-color: #ffffff77;
+  padding: 12px;
+  border-radius: 8px;
+}

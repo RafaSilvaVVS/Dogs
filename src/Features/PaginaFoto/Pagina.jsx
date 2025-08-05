@@ -4,6 +4,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import Titulo from '../../components/TituloPirncipal/Titulo';
 import Comentar from '../ModalPost/Comentar';
+import Loading from '../LoadingIcone/Loading';
 
 const Pagina = () => {
   const { data, loading, error, request } = useFetch();
@@ -21,6 +22,7 @@ const Pagina = () => {
 
   console.log(data);
 
+  if (loading) return <Loading loading={loading} />;
   if (data)
     return (
       <section className="container-foto">
@@ -47,9 +49,11 @@ const Pagina = () => {
               </div>
             ))}
           </div>
-          <div className="comentario-input">
-            <Comentar id={id} setComentar={setComentar} />
-          </div>
+          {window.localStorage.getItem('token') && (
+            <div className="comentario-input">
+              <Comentar id={id} setComentar={setComentar} />
+            </div>
+          )}
         </div>
       </section>
     );
