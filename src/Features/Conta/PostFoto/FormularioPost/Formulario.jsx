@@ -32,7 +32,6 @@ const Formulario = () => {
   }
 
   React.useEffect(() => {
-    console.log('olá');
     if (img) {
       setPreview(URL.createObjectURL(img));
     }

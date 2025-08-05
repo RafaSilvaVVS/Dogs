@@ -7,7 +7,8 @@
 .link-nav{
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: center;
+  align-items: start;
+  grid-row: 1;
 
 }
 
@@ -27,6 +28,11 @@
   padding: 8px;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.ul-lista-nav {
+  grid-column: 2;
+  grid-row: 1 / 1;
 }
 
 .ul-lista-nav nav{
