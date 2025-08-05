@@ -2,6 +2,7 @@ import React from 'react';
 import './Main.css';
 import useFetch from '../../../hooks/useFetch';
 import Dogs from '../components/Dogs';
+import Loading from '../../LoadingIcone/Loading';
 
 const Main = () => {
   const { data, loading, error, request } = useFetch();
@@ -64,16 +65,22 @@ const Main = () => {
     request(`/api/photo/?_total=${total}&_page=1&_user=0`);
   }, [total, request]);
 
-  return (
-    <main>
-      <div className="main">
-        {data && <Dogs data={data} />}
-
-        {data && mensagem && <p style={{ textAlign: 'center' }}>{mensagem}</p>}
-        <div ref={listaFoto} style={{ height: '30px' }}></div>
-      </div>
-    </main>
-  );
+  if (loading) return <Loading loading={loading} />;
+  if (data && !loading)
+    return (
+      <main>
+        <div className="main">
+          {data && <Dogs data={data} />}
+          {data && mensagem && (
+            <p style={{ textAlign: 'center' }}>{mensagem}</p>
+          )}
+          <div ref={listaFoto} style={{ height: '30px' }}></div>
+        </div>
+      </main>
+    );
+  else {
+    return null;
+  }
 };
 
 export default Main;

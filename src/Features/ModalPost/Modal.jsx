@@ -5,6 +5,7 @@ import './Modal.css';
 import Input from './InputComentario/Input';
 import { NavLink } from 'react-router-dom';
 import Comentar from './Comentar';
+import Loading from '../../Features/LoadingIcone/Loading';
 
 const Modal = ({ id, setModal }) => {
   const { data, loading, error, request } = useFetch();
@@ -24,7 +25,8 @@ const Modal = ({ id, setModal }) => {
     }
   }
 
-  if (data && data.photo)
+  if (loading) return <Loading loading={loading} />;
+  if (data && data.photo && !loading)
     return (
       <div onClick={fecharModal} className="container-modal">
         <div ref={modal} className="modal-item">
