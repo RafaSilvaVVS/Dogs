@@ -19,14 +19,16 @@ const App = () => {
             <Header />
           </GlobalStorage>
         </div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/login/criar" element={<Criar />} />
-          <Route path="conta/*" element={<HomeConta />} />
-          <Route path="perfil/:autor" element={<Autor />} />
-          <Route path="foto/:id" element={<Pagina />} />
-        </Routes>
+        <GlobalStorage>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/login/criar" element={<Criar />} />
+            <Route path="conta/*" element={<HomeConta />} />
+            <Route path="perfil/:autor" element={<Autor />} />
+            <Route path="foto/:id" element={<Pagina />} />
+          </Routes>
+        </GlobalStorage>
         <Footer />
       </div>
     </BrowserRouter>
