@@ -1,0 +1,14 @@
+.pagina-not-found{
+
+  height: calc(100vh + 25px);
+}
+
+.pagina-not-found div{
+   max-width: 700px;
+   padding: 26px;
+  margin: 0 auto;
+}
+
+.pagina-not-found div p{
+  margin-top: 20px;
+}
