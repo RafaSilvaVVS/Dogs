@@ -21,11 +21,11 @@ const Header = () => {
           <li>
             {window.localStorage.getItem('token') ? (
               <Link to="/conta/">
-                <LinkHeader texto="fwokakf" />
+                <LinkHeader texto={userContext} />
               </Link>
             ) : (
               <Link to="login">
-                <LinkHeader texto={'opa'} />
+                <LinkHeader texto="Login / Conta" />
               </Link>
             )}
           </li>
