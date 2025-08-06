@@ -10,15 +10,15 @@ import HomeConta from './Features/Conta/Home';
 import Autor from './Features/AutorPage/Autor';
 import Pagina from './Features/PaginaFoto/Pagina';
 import { GlobalStorage } from './hooks/userContext';
+import PaginaNotFound from './Features/PaginaNotFound/PaginaNotFound';
 const App = () => {
   return (
     <BrowserRouter>
       <div className="div-App">
-        <div>
-          <GlobalStorage>
-            <Header />
-          </GlobalStorage>
-        </div>
+        <GlobalStorage>
+          <Header />
+        </GlobalStorage>
+
         <GlobalStorage>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -27,6 +27,7 @@ const App = () => {
             <Route path="conta/*" element={<HomeConta />} />
             <Route path="perfil/:autor" element={<Autor />} />
             <Route path="foto/:id" element={<Pagina />} />
+            <Route path="*" element={<PaginaNotFound />} />
           </Routes>
         </GlobalStorage>
         <Footer />
