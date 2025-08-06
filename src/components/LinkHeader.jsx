@@ -1,6 +1,6 @@
 import React from 'react';
 import './LinkHeader.css';
-import PropTypes from 'prop-types';
+import { PropTypes } from 'prop-types';
 
 const LinkHeader = ({ texto }) => {
   console.log(typeof texto);
