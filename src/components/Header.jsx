@@ -4,6 +4,7 @@ import LinkHeader from './linkHeader';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { GlobalContext } from '../hooks/userContext';
+import PropTypes from 'prop-types';
 
 const Header = () => {
   const userContext = React.useContext(GlobalContext);
@@ -20,11 +21,11 @@ const Header = () => {
           <li>
             {window.localStorage.getItem('token') ? (
               <Link to="/conta/">
-                <LinkHeader texto={userContext} />
+                <LinkHeader texto="fwokakf" />
               </Link>
             ) : (
               <Link to="login">
-                <LinkHeader texto="Login / Criar" />
+                <LinkHeader texto={'opa'} />
               </Link>
             )}
           </li>
