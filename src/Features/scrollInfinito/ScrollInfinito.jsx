@@ -80,7 +80,7 @@ const ScrollInfinito = ({ user }) => {
                 margin: 'auto',
                 height: '10vh',
                 display: 'grid',
-                'align-items': 'center',
+                alignItems: 'center',
               }}
             >
               {mensagem}
