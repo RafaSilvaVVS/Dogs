@@ -7,10 +7,13 @@ import Entrar from './Btn/Entrar';
 import LinkSenha from './LinkSenha/LinkSenha';
 import { Link, useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import { GlobalContext } from '../../hooks/userContext';
 
 const Login = () => {
   const navigate = useNavigate();
   const localPath = window.location.pathname;
+
+  const { setToken, token } = React.useContext(GlobalContext);
 
   React.useEffect(() => {
     if (window.localStorage.getItem('token') && localPath.includes('/login')) {
@@ -43,10 +46,11 @@ const Login = () => {
   }, [error]);
   React.useEffect(() => {
     if (data && data.token) {
+      setToken(data.token);
       window.localStorage.setItem('token', data.token);
       navigate('/conta/');
     }
-  }, [data, navigate]);
+  }, [data, token]);
 
   return (
     <main className="container-login">
