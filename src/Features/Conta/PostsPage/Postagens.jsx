@@ -9,7 +9,6 @@ import ScrollInfinito from '../../ScrollInfinito/ScrollInfinito';
 
 const Postagens = () => {
   const user = React.useContext(GlobalContext);
-  const [id, setId] = React.useState(null);
   const [modal, setModal] = React.useState(false);
   React.useEffect(() => {
     document.title = 'Dogs | Conta';

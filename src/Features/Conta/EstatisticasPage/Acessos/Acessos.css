@@ -1,0 +1,7 @@
+.acessos-container{
+  padding:28px;
+  box-shadow: 1px 0px 10px 0px #ccc;
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 30px 0px;
+}

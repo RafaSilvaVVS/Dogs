@@ -1,0 +1,16 @@
+.container-char{
+  display: grid;
+  gap: 25px;
+  grid-template-columns: auto auto;
+}
+
+@media(max-width:700px){
+  .container-char{
+    grid-template-columns: auto;
+  }
+}
+
+.container-char div{
+  box-shadow: 2px 0px 4px 1px #ddd;
+  padding: 12px;
+}
