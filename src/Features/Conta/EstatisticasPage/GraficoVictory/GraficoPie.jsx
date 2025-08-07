@@ -22,7 +22,8 @@ const GraficoPie = () => {
     }));
     setSomarAcessos(acessosTotal);
   }, [data]);
-  if ((data, somarAcessos))
+  console.log(data);
+  if (data && data?.length >= 1 && somarAcessos)
     return (
       <div className="container-char">
         <VictoryPie
@@ -32,14 +33,16 @@ const GraficoPie = () => {
           }))}
         />
 
-        <VictoryChart
-          data={somarAcessos.map(({ X, Y }) => ({
-            x: X,
-            y: Y,
-          }))}
-        >
-          <VictoryBar alignment="start" />
-        </VictoryChart>
+        {
+          <VictoryChart
+            data={somarAcessos.map(({ X, Y }) => ({
+              x: X,
+              y: Y,
+            }))}
+          >
+            <VictoryBar alignment="start" />
+          </VictoryChart>
+        }
       </div>
     );
 };

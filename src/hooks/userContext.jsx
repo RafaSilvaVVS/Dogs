@@ -5,35 +5,39 @@ export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
   const [nome, setNome] = React.useState(null);
-  const [pegarNome, setPegarNome] = React.useState(null);
+  const [token, setToken] = React.useState('');
   const { data, loading, error, request } = useFetch();
   React.useEffect(() => {
-    if (window.localStorage.getItem('token'))
+    if (token)
       request('/jwt-auth/v1/token/validate', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${window.localStorage.getItem('token')}`,
         },
       });
-  }, [request]);
+  }, [request, token]);
   React.useEffect(() => {
-    if (window.localStorage.getItem('token'))
+    if (window.localStorage.getItem('token')) {
       request('/api/user', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${window.localStorage.getItem('token')}`,
         },
       });
-
-    setPegarNome(true);
-  }, [request]);
+    }
+  }, [request, token]);
 
   React.useEffect(() => {
-    if (data) setNome(data.nome);
-    if (data?.error) window.localStorage.removeItem('token');
-  }, [pegarNome, data]);
+    setNome(data?.nome);
+  }, [data]);
+
+  React.useEffect(() => {
+    setToken(window.localStorage.getItem('token'));
+  }, [token]);
 
   return (
-    <GlobalContext.Provider value={nome}>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={{ nome, setToken, token }}>
+      {children}
+    </GlobalContext.Provider>
   );
 };

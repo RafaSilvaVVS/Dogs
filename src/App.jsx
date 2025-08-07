@@ -17,9 +17,6 @@ const App = () => {
       <div className="div-App">
         <GlobalStorage>
           <Header />
-        </GlobalStorage>
-
-        <GlobalStorage>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
@@ -29,8 +26,8 @@ const App = () => {
             <Route path="foto/:id" element={<Pagina />} />
             <Route path="*" element={<PaginaNotFound />} />
           </Routes>
+          <Footer />
         </GlobalStorage>
-        <Footer />
       </div>
     </BrowserRouter>
   );

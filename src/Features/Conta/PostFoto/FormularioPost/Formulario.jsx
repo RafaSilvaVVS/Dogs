@@ -17,11 +17,6 @@ const Formulario = () => {
     formData.append('nome', nome);
     formData.append('peso', peso);
     formData.append('idade', idade);
-    if (data?.code) {
-      setErrorMessage('Dados Incompletos');
-    } else {
-      setErrorMessage('');
-    }
     request('/api/photo', {
       method: 'POST',
       headers: {
@@ -36,6 +31,14 @@ const Formulario = () => {
       setPreview(URL.createObjectURL(img));
     }
   }, [img]);
+
+  React.useEffect(() => {
+    if (data?.code) {
+      setErrorMessage('Dados Incompletos');
+    } else {
+      setErrorMessage('');
+    }
+  }, [data]);
 
   return (
     <>
@@ -70,7 +73,11 @@ const Formulario = () => {
             id="foto"
           />
           {errorMeessage && <p style={{ color: 'red' }}>{errorMeessage}</p>}
-          <Enviar texto="Publicar" fetchLogin={fetchPost} />
+          <Enviar
+            texto={loading ? 'carregando' : 'Publicar'}
+            fetchLogin={fetchPost}
+            loading={loading}
+          />
         </form>
         <div className="preview">
           {preview && <img src={preview} alt="imagem" />}
