@@ -4,10 +4,17 @@ import Menu from '../../Conta/MenuConta/Menu';
 import Feed from '../../../assets/feed.svg';
 import Estatisticas from '../../../assets/estatisticas.svg';
 import Adicionar from '../../../assets/adicionar.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Logout from '../../../assets/sair.svg';
+import { GlobalContext } from '../../../hooks/userContext';
 
 const ModalMenu = () => {
+  const { removerToken } = React.useContext(GlobalContext);
+  const navigate = useNavigate();
+  function logout() {
+    removerToken();
+    navigate('/');
+  }
   return (
     <ul className="ul-menu-modal">
       <li>
@@ -28,7 +35,7 @@ const ModalMenu = () => {
           <span>Postagens</span>
         </NavLink>
       </li>
-      <li className="logout-mobile">
+      <li onClick={logout} className="logout-mobile">
         <Menu src={Logout} title="Icone sair" />
         <span>Sair</span>
       </li>

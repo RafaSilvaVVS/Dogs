@@ -35,8 +35,13 @@ export const GlobalStorage = ({ children }) => {
     setToken(window.localStorage.getItem('token'));
   }, [token]);
 
+  function removerToken() {
+    setToken(false);
+    window.localStorage.removeItem('token');
+  }
+
   return (
-    <GlobalContext.Provider value={{ nome, setToken, token }}>
+    <GlobalContext.Provider value={{ nome, setToken, token, removerToken }}>
       {children}
     </GlobalContext.Provider>
   );

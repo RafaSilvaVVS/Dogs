@@ -6,7 +6,8 @@ import './Header.css';
 import { GlobalContext } from '../hooks/userContext';
 
 const Header = () => {
-  const { nome } = React.useContext(GlobalContext);
+  const { nome, token } = React.useContext(GlobalContext);
+
   return (
     <header>
       <nav className="container-header">

@@ -10,6 +10,7 @@ import EstatisticaImg from '../../assets/estatisticas.svg';
 import Adicionar from '../../assets/adicionar.svg';
 import MenuMobile from '../Mobile/MenuMobile';
 import Logout from '../../assets/sair.svg';
+import { GlobalContext } from '../../hooks/userContext';
 
 const Home = () => {
   const localPath = window.location.pathname;
@@ -19,6 +20,13 @@ const Home = () => {
       navigate('/');
     }
   }, [localPath, navigate]);
+
+  const { removerToken } = React.useContext(GlobalContext);
+
+  function logout() {
+    removerToken();
+    navigate('/');
+  }
   return (
     <main>
       <div className="container-conta">
@@ -46,7 +54,7 @@ const Home = () => {
                   <Menu src={Adicionar} title="Icone enviar" />
                 </NavLink>
               </li>
-              <li className="logout">
+              <li onClick={logout} className="logout">
                 <Menu src={Logout} title="Icone sair" />
               </li>
             </nav>
