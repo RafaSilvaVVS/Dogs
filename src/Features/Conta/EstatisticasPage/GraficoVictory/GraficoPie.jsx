@@ -22,7 +22,6 @@ const GraficoPie = () => {
     }));
     setSomarAcessos(acessosTotal);
   }, [data]);
-  console.log(data);
   if (data && data?.length >= 1 && somarAcessos)
     return (
       <div className="container-char">

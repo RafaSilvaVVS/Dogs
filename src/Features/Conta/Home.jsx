@@ -36,8 +36,8 @@ const Home = () => {
             <Route path="estatisticas" element={<Estatisticas />} />
             <Route path="postar" element={<Postar />} />
           </Routes>
-          <MenuMobile />
           <ul className="ul-lista-nav">
+            <MenuMobile />
             <nav>
               <li>
                 <NavLink end to="/conta/">
