@@ -2,15 +2,16 @@ import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import Titulo from '../../components/TituloPirncipal/Titulo';
 import './Modal.css';
-import Input from './InputComentario/Input';
 import { NavLink } from 'react-router-dom';
 import Comentar from './Comentar';
 import Loading from '../../Features/LoadingIcone/Loading';
+import { GlobalContext } from '../../hooks/userContext';
+import Deletar from './BtnDeletar/Deletear';
 
 const Modal = ({ id, setModal }) => {
   const { data, loading, error, request } = useFetch();
   const [comentario, setComentar] = React.useState(false);
-
+  const { nome } = React.useContext(GlobalContext);
   const modal = React.useRef('');
   React.useEffect(() => {
     request(`/api/photo/${id}`);
@@ -35,9 +36,13 @@ const Modal = ({ id, setModal }) => {
           </div>
           <div className="conteudo-foto-modal">
             <div className="header-modal">
-              <NavLink to={`/perfil/${data.photo.author}`}>
-                <p className="autor">@{data.photo.author}</p>
-              </NavLink>
+              {data.photo.author !== nome ? (
+                <NavLink to={`/perfil/${data.photo.author}`}>
+                  <p className="autor">@{data.photo.author}</p>
+                </NavLink>
+              ) : (
+                <Deletar id={data.photo.id} />
+              )}
               <p className="photo-modal-acessos">{data.photo.acessos}</p>
             </div>
             <NavLink to={`/foto/${data.photo.id}`}>

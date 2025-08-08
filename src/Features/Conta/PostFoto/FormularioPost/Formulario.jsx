@@ -2,8 +2,10 @@ import React from 'react';
 import './Formulario.css';
 import Enviar from '../../../Login/Btn/Entrar';
 import useFetch from '../../../../hooks/useFetch';
+import { useNavigate } from 'react-router-dom';
 const Formulario = () => {
   const [nome, setNome] = React.useState('');
+  const navigate = useNavigate();
   const [idade, setIdade] = React.useState('');
   const [preview, setPreview] = React.useState('');
   const [peso, setPeso] = React.useState('');
@@ -37,6 +39,12 @@ const Formulario = () => {
       setErrorMessage('Dados Incompletos');
     } else {
       setErrorMessage('');
+    }
+
+    console.log(data);
+
+    if (!!data?.post_author) {
+      navigate('/conta/');
     }
   }, [data]);
 
