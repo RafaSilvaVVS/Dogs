@@ -12,7 +12,7 @@
 
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
   .ul-lista-nav nav{
     display: none;
     position: relative;
@@ -37,11 +37,14 @@
 }
 
 @media(min-width:700px){
-
   .ul-lista-nav nav{
     display: flex;
     align-items: center;
     gap: 25px;
+  }
+
+  .ul-lista-nav div{
+    display: none;
   }
 }
 

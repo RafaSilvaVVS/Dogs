@@ -38,13 +38,3 @@
   border-radius: 8px;
 }
 
-.container-mobile {
-  display: none;
-  position: relative;
-}
-
-@media (max-width: 600px) {
-  .container-mobile {
-    display: block;
-  }
-}
