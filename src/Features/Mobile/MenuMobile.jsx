@@ -9,7 +9,7 @@ const MenuMobile = () => {
     setModal((ant) => !ant);
   }
   return (
-    <div className="container-mobile">
+    <div className="ccontainer-mobile">
       <div
         onClick={menuAbrir}
         className={
@@ -17,8 +17,9 @@ const MenuMobile = () => {
             ? 'div-menu-mobile ativo rotacionar '
             : 'div-menu-mobile'
         }
-      ></div>
-      {modalMenu && <ModalMenu />}
+      >
+        {modalMenu && <ModalMenu />}
+      </div>
     </div>
   );
 };
