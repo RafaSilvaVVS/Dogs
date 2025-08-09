@@ -28,7 +28,7 @@ export const GlobalStorage = ({ children }) => {
   }, [request, token]);
 
   React.useEffect(() => {
-    setNome(data?.nome);
+    setNome(data?.username);
   }, [data]);
 
   React.useEffect(() => {

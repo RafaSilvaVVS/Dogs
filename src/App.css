@@ -14,8 +14,11 @@ img{
 .div-App{
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh + 15rem);
+  justify-content: space-between;
+  min-height: calc(100vh + 20px);
 }
+
+
 
 .container-item,
 .container-header{

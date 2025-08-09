@@ -1,9 +1,8 @@
 import React from 'react';
+import './Bg.css';
 
 const Bg = () => {
-  return (
-    <img src="../../src/assets/login.jpg" alt="Foto de um cachorro de fundo" />
-  );
+  return <div className="background"></div>;
 };
 
 export default Bg;

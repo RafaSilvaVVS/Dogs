@@ -17,7 +17,7 @@ const Login = () => {
 
   React.useEffect(() => {
     if (window.localStorage.getItem('token') && localPath.includes('/login')) {
-      navigate('/conta/');
+      // navigate('/conta/');;
     }
   }, [localPath, navigate]);
   const { data, loading, error, request } = useFetch();
@@ -77,7 +77,9 @@ const Login = () => {
             loading={loading}
           />
         </form>
-        <LinkSenha />
+        <Link to="perdeu">
+          <LinkSenha />
+        </Link>
         <div className="cadastro">
           <h2>Cadastre-se</h2>
           <p>Ainda não possui conta? Cadastre-se no site.</p>

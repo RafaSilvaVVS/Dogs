@@ -6,8 +6,10 @@ import Home from './Features/Home';
 import Login from './Features/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Criar from './Features/Login/CriarConta/Criar';
+import Resetar from './Features/Login/ResetarSenha/ResetSenha/Resetar';
 import HomeConta from './Features/Conta/Home';
 import Autor from './Features/AutorPage/Autor';
+import PerdeuSenha from './Features/Login/ResetarSenha/PerdeuSenha';
 import Pagina from './Features/PaginaFoto/Pagina';
 import { GlobalStorage } from './hooks/userContext';
 import PaginaNotFound from './Features/PaginaNotFound/PaginaNotFound';
@@ -21,6 +23,9 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/login/criar" element={<Criar />} />
+            <Route path="/login/perdeu" element={<PerdeuSenha />} />
+            <Route path="/login/resetar/*" element={<Resetar />} />
+
             <Route path="conta/*" element={<HomeConta />} />
             <Route path="perfil/:autor" element={<Autor />} />
             <Route path="foto/:id" element={<Pagina />} />
